@@ -6,7 +6,7 @@ services:
     image: redis
     container_name: cache
     expose:
-      - 9379
+      - 6379
   rr-content-layer: # name of the first service
     links:
       - redis
