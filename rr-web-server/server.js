@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const redisClient = require('./modules/redisclient');
 
 // Get our API routes
 const api = require('./routes/api');
@@ -17,6 +18,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Set our api routes
 app.use('/', api);
 
+app.get('/store/:key', async (req, res) => {
+    const { key } = req.params;
+    const value = req.query;
+    await redisClient.setAsync(key, JSON.stringify(value));
+    return res.send('Success');
+});
+app.get('/:key', async (req, res) => {
+    const { key } = req.params;
+    const rawData = await redisClient.getAsync(key);
+    return res.json(JSON.parse(rawData));
+});
 
 /**
  * Get port from environment and store in Express.
