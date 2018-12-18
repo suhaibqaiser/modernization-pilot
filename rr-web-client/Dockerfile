@@ -1,25 +1,32 @@
-# Create image based on the official Node 6 image from dockerhub
-FROM node:latest
+### STAGE 1: Build ###
 
-# Create a directory where our app will be placed
-RUN mkdir -p /usr/src/app
+# We label our stage as ‘builder’
+FROM node:10-alpine as builder
 
-# Change directory so that our commands run inside this new directory
-WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
 
-# Copy dependency definitions
-COPY package.json /usr/src/app
+## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
+RUN npm i && mkdir /ng-app && mv ./node_modules ./ng-app
 
-# Install dependecies
-RUN npm install @angular/cli
-RUN npm install
+WORKDIR /ng-app
+
+COPY . .
+
+## Build the angular app in production mode and store the artifacts in dist folder
+RUN $(npm bin)/ng build --prod --output-path=dist
 
 
-# Get all the code needed to run the app
-COPY . /usr/src/app
+### STAGE 2: Setup ###
 
-# Expose the port the app runs in
-EXPOSE 4200
+FROM nginx:1.14.1-alpine
 
-# Serve the app
-CMD ["npm", "start"]
+## Copy our default nginx config
+COPY nginx/default.conf /etc/nginx/conf.d/
+
+## Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
+
+## From ‘builder’ stage copy over the artifacts in dist folder to default nginx public folder
+COPY --from=builder /ng-app/dist /usr/share/nginx/html
+
+CMD ["nginx", "-g", "daemon off;"]
