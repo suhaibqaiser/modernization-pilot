@@ -17,6 +17,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Set our api routes
 app.use('/', api);
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 app.get('/store/:key', async (req, res) => {
     const { key } = req.params;
