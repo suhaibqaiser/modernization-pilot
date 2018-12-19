@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.styl']
 })
 export class AppComponent {
-  title = 'rr-web-new';
+  constructor(private renderer: Renderer2) {
+    this.renderer.addClass(document.body, 'rr-body');
+    this.renderer.addClass(document.body, 'hide-desktop-tablet-sub-header');
+    this.renderer.addClass(document.body, 'hide-mobile-fylp');
+    this.renderer.addClass(document.body, 'no-franchise-location');
+  }
+  title = 'rr-web-new roto';
 }
