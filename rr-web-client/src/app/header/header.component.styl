@@ -549,7 +549,7 @@ html .custom-row {
 }
 
 .mobile-menu-header .roto-navigation-container .rotorooter-mobile-logo {
-    background: url(/images/RR-logo-MOB.svg) no-repeat;
+    background: url(http://system4dev.rotorooter.com:8080/images/RR-logo-MOB.svg) no-repeat;
     background-size: 100%;
     background-position: 50%;
     height: 3.125em
@@ -570,13 +570,13 @@ html .custom-row {
 .mobile-menu-header .roto-navigation-container .mobile-menu-nav-icon.main-nav-icon {
     background-size: 100%;
     background-position: 0 0;
-    background: url(/images/ICON-Menu-MainNav-MOB.svg) no-repeat
+    background: url(http://system4dev.rotorooter.com:8080/images/ICON-Menu-MainNav-MOB.svg) no-repeat
 }
 
 .mobile-menu-header .roto-navigation-container .mobile-menu-nav-icon.search-icon {
     background-size: 100%;
     background-position: 0 0;
-    background: url(/images/ICON-Menu-Search-MOB.svg) no-repeat
+    background: url(http://system4dev.rotorooter.com:8080/images/ICON-Menu-Search-MOB.svg) no-repeat
 }
 
 .mobile-menu-header .roto-navigation-container .mobile-menu-nav-icon span {
@@ -621,25 +621,25 @@ html .custom-row {
 .mobile-menu-sub-header .roto-navigation-container .mobile-menu-sub-header-item .mobile-menu-item a .schedule-icon {
     background-size: 100%;
     background-position: 0 0;
-    background: url(/images/ICON-Schedule-Service-MOB.svg) no-repeat
+    background: url(http://system4dev.rotorooter.com:8080/images/ICON-Schedule-Service-MOB.svg) no-repeat
 }
 
 .mobile-menu-sub-header .roto-navigation-container .mobile-menu-sub-header-item .mobile-menu-item a .location-icon {
     background-size: 100%;
     background-position: 0 0;
-    background: url(/images/ICON-Locations-MOB.svg) no-repeat
+    background: url(http://system4dev.rotorooter.com:8080/images/ICON-Locations-MOB.svg) no-repeat
 }
 
 .mobile-menu-sub-header .roto-navigation-container .mobile-menu-sub-header-item .mobile-menu-item a .residential-icon {
     background-size: 100%;
     background-position: 0 0;
-    background: url(/images/ICON-Residential-MOB.svg) no-repeat
+    background: url(http://system4dev.rotorooter.com:8080/images/ICON-Residential-MOB.svg) no-repeat
 }
 
 .mobile-menu-sub-header .roto-navigation-container .mobile-menu-sub-header-item .mobile-menu-item a .commercial-icon {
     background-size: 100%;
     background-position: 0 0;
-    background: url(/images/ICON-Commercial-MOB.svg) no-repeat
+    background: url(http://system4dev.rotorooter.com:8080/images/ICON-Commercial-MOB.svg) no-repeat
 }
 
 .mobile-menu-sub-header .roto-navigation-container .mobile-menu-sub-header-item .mobile-menu-item a span.item-text {
@@ -2144,6 +2144,33 @@ header .custom-row {
 .top-nav a:last-child:after {
     content: none
 }
+@media (min-width: 1128px)
+    .header-custom .rr-logo {
+        height: 6rem;
+        left: .9rem;
+        width: 27rem;
+    }
+
+.header-custom .rr-logo .svg, .header-custom .rr-logo>svg {
+    bottom: 0;
+    display: block;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: -.125rem;
+    max-width: 24rem;
+}
+.header-custom:before {
+    background: #2d397d none repeat scroll 0 0;
+    content: "";
+    height: 2rem;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    -webkit-transition: top .25s;
+    transition: top .25s;
+    width: 50%;
+}
 
 .main-nav {
     position: relative;
@@ -3544,4 +3571,19 @@ ul.typeahead.dropdown-menu li.active>a,ul.typeahead.dropdown-menu li:hover>a {
     .hovering .header-custom .custom-row .custom-nav .main-nav>ul>li.active>a,.hovering .header-custom .custom-row .custom-nav .main-nav>ul>li.drop-down-tab>a:hover,.hovering .header-custom .custom-row .custom-nav .main-nav>ul>li.drop-down-tab a:active {
         color: #2d397d
     }
+}
+
+
+@media (min-width: 1128px)
+    .header-custom .custom-row .custom-nav {
+        padding-left: 25.5rem;
+    }
+
+.header-custom .custom-row .custom-nav {
+    height: 6rem;
+    padding-left: 0;
+    text-align: right;
+    -webkit-transition: height .25s;
+    transition: height .25s;
+    width: 100%;
 }

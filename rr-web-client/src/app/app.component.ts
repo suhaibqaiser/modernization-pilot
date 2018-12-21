@@ -1,7 +1,8 @@
-import { Component, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, ViewEncapsulation, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl']
 })
