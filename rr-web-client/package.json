@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:browser": "ng build --prod --project rr-web-new",
+    "build:server": "ng build --prod --project rr-web-new-server --output-hashing none",
+    "build": "npm run build:browser && npm run build:server",
+    "serve": "node server.js"
   },
   "private": true,
   "dependencies": {
@@ -16,9 +19,12 @@
     "@angular/compiler": "~7.1.0",
     "@angular/core": "~7.1.0",
     "@angular/forms": "~7.1.0",
+    "@angular/http": "^7.1.4",
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
+    "@angular/platform-server": "^7.1.4",
     "@angular/router": "~7.1.0",
+    "@nguniversal/express-engine": "^7.0.2",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
