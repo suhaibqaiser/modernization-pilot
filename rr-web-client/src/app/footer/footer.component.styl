@@ -1,0 +1,527 @@
+screen-sm-min = 768px
+screen-xs-max = 767px
+
+footer {
+    margin-top: -47rem;
+    @media (min-width:screen-sm-min) {
+		background: @rr-light-grey;
+		margin-top: -24.5rem;
+		font-size: 0.75rem; //12px
+		line-height: 1.66666667; //20px
+    }
+}
+
+#footer-custom {
+  box-sizing: border-box;
+  background: @rr-light-grey;
+	@media (max-width: screen-xs-max) {
+		display: none !important;
+	}
+	.custom-row {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 77rem; //1232px
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		width: 100%;
+    box-sizing: border-box;
+
+		@media (min-width: 768px) and (max-width: 1120px) {
+			padding-left: .75rem;
+			padding-right: .75rem;
+		}
+
+		&#footer-jingle {
+			background-color: #fff;
+			max-width: 100%;
+			padding-bottom: 1.25rem;
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%;
+      box-sizing: border-box;
+			.jingle-click-area {
+				display: block;
+				height: 8.25rem;
+				margin-left: auto;
+				margin-right: auto;
+				width: 20rem;
+        box-sizing: border-box;
+        cursor: default;
+				&:link, &:hover, &:active, &:focus {
+					outline: none;
+					text-decoration: none;
+					color: transparent;
+				}
+				svg,.svg {
+				    display: block;
+            box-sizing: border-box;
+					.a {
+						fill: @rr-red;
+					}
+					.b {
+						fill: @rr-navy;
+					}
+				}
+			}
+		}
+		&#footer-wrapper {
+			height: 15rem;
+			overflow: visible;
+			padding-bottom: 0;
+			padding-top: 3.5rem;
+			position: relative;
+      box-sizing: border-box;
+      background: @rr-light-grey;
+			a.stop-btn {
+				content: "";
+				background-image: url('http://system4dev.rotorooter.com:8080/images/ICON-Footer-Drain.png');
+				background-repeat: no-repeat;
+				background-size: 5.625rem 5.625rem;
+				display: block;
+				height: 5.625rem;
+				left: 50%;
+				margin-left: -2.8125rem;
+				position: absolute;
+				top: -2.8125rem;
+				width: 5.625rem;
+        box-sizing: border-box;
+        cursor: default;
+        & > em {
+          display: none;
+        }
+        &.playing {
+          background-image: none;
+          text-align: start;
+          background-color: @rr-white;
+          border-radius: 50%;
+          & > em {
+            display: inline-block;
+            color: @rr-red;
+            font-size: 6.625rem;
+            line-height: 4rem;
+            cursor: default;
+            left: -0.5rem;
+          }
+        }
+			}		
+			> div {
+				float: left;
+				height: 8rem;
+				padding-left: 0.75rem;
+				padding-right: 0;
+				padding-top: 0.625rem;
+				position: relative;
+				width: 25%;
+        box-sizing: border-box;
+
+				@media (min-width: 768px) and (max-width: 1120px) {
+					padding-left: 0;
+					padding-right: 0;
+					width: 30%;
+				}
+
+				&#footer-logo {
+					width: 28.8889%;
+					padding-top: 0;
+          box-sizing: border-box;
+
+					@media (min-width: 768px) and (max-width: 1120px) {
+						width: 20%;
+						padding-top: 2rem;
+					}
+
+					a {
+						display: block;
+						svg,.svg {
+							height: auto;
+							width: 16.125rem;
+
+							@media (min-width: 768px) and (max-width: 1120px) {
+								width: 9.2rem;
+							}
+						}	
+					}
+				}
+				&#footer-links {
+					padding-left: 0;
+					padding-top: 0.5rem;
+					width: 21.1111%;
+          box-sizing: border-box;
+
+					@media (min-width: 768px) and (max-width: 1120px) {
+						width: 20%;
+					}
+
+					.links-col {
+						float: left;
+						width: 50%;
+            box-sizing: border-box;
+
+						a {
+							display: block;
+							color: @rr-heather;
+							text-align: left;
+							text-decoration: underline;
+							font-family: @font-family-base;
+							box-sizing: border-box;
+						}
+					}
+				}
+				&#footer-login {
+					overflow: visible;
+          box-sizing: border-box;
+					& > a {
+						background: @rr-blue; /* For browsers that do not support gradients */
+						background: linear-gradient(@rr-blue-ninety, @rr-blue);
+						background: -webkit-linear-gradient(@rr-blue-ninety, @rr-blue); /* For Safari 5.1 to 6.0 */
+						background: -o-linear-gradient(@rr-blue-ninety, @rr-blue); /* For Opera 11.1 to 12.0 */
+						background: -moz-linear-gradient(@rr-blue-ninety, @rr-blue); /* For Firefox 3.6 to 15 */
+						background: linear-gradient(@rr-blue-ninety, @rr-blue); /* Standard syntax */
+						border-radius: 0.375rem;
+						border-color: @rr-navy;
+						border-width: 2px 2px 6px;
+						border-style: solid;
+						color: #fff;
+						display: block;
+						font-size: 1.25rem;
+						font-weight: 400;
+						height: 3rem;
+						line-height: 1.2;
+						padding-top: 0.5rem;
+						text-align: center;
+						text-shadow: 0 1px @rr-navy;
+						width: 100%;
+            box-sizing: border-box;
+
+						@media (min-width: 768px) and (max-width: 1120px) {
+							margin-left: .5rem;
+						}
+					}
+					p {
+						bottom: 0.125rem;
+						color: @rr-heather;
+						display: block;
+						font-family: @font-family-base;
+						font-size: 0.75rem;
+						left: 0.75rem;
+						line-height: 1.33333;
+						margin: 0;
+						position: absolute;
+						text-align: left;
+						top: auto;
+						width: 130%;
+            box-sizing: border-box;
+						strong {
+							color: @rr-heather;
+							display: block;
+							padding-bottom: 0.625rem;
+						}
+					}
+				}
+				&#footer-social {
+					text-align: right;
+          box-sizing: border-box;
+					a {
+						border-radius: 0.375rem;
+						box-sizing: border-box;
+						display: inline-block;
+						height: 3rem;
+						margin-bottom: 0.75rem;
+						margin-left: 1rem;
+						overflow: hidden;
+						padding: 0;
+						width: 3rem;
+
+						@media (min-width: 768px) and (max-width: 1120px) {
+							margin-left: 0.2rem;
+						}
+
+						svg,.svg {
+							display: block;
+							border-radius: 0.375rem;
+							&.youtube {
+								background-color: #bb0000;
+							}
+							&.facebook {
+								background-color: #3b5998;
+							}
+							&.pinterest {
+								background-color: #cb2027;
+							}
+							&.twitter {
+								background-color: #55acee;
+							}
+							&.google {
+								background-color: #dd4b39;
+							}
+							&.linkedin {
+								background-color: #007bb5;
+							}
+							&.instagram {
+								background-color: #125688;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.nowebp #mobile-footer-custom .custom-row#mob-footer-logo-login a.stop-btn{
+	background-image: url('http://system4dev.rotorooter.com:8080/images/ICON-Footer-Drain.png');
+}
+
+.webp #mobile-footer-custom .custom-row#mob-footer-logo-login a.stop-btn{
+	background-image: url('http://system4dev.rotorooter.com:8080/images/ICON-Footer-Drain.webp');
+}
+
+#mobile-footer-custom {
+	padding: 0;
+    box-sizing: border-box;
+	@media (min-width: screen-sm-min) {
+	  display: none;
+	}
+
+	.custom-row {
+	    margin-left: 0;
+	    margin-right: 0;
+	    padding-left: 0.75rem;
+	    padding-right: 0.75rem;
+      box-sizing: border-box;
+	    &.jingle-click-area {
+			display: block;
+			height: 132px;
+			margin: 0 auto;
+			padding-left: 0;
+			padding-right: 0;
+			position: relative;
+			width: 320px;
+      box-sizing: border-box;
+      cursor: default;
+			svg,.svg {
+			    display: block;
+			    height: 100%;
+			    width: 100%;
+          box-sizing: border-box;
+				.a {
+					fill: @rr-red;
+				}
+				.b {
+					fill: @rr-navy;
+				}
+			}
+	    }
+		&#mob-footer-logo-login {
+			background: @rr-light-grey;
+			height: 14rem;
+			padding-top: 2.75rem;
+			position: relative;
+      box-sizing: border-box;
+      
+      a.stop-btn {
+        content: "";
+        background-repeat: no-repeat;
+        background-size: 6rem 6rem;
+        height: 6rem;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        top: -3rem;
+        width: 6rem;
+        box-sizing: border-box;
+        cursor: default;
+        & > em {
+          display: none;
+        }
+      
+        &.playing {
+          letter-spacing: normal;
+          line-height: 1;
+          text-rendering: optimizeLegibility;
+          text-transform: none;
+          word-wrap: normal;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          background-image: none;
+          text-align: start;
+          & > em {
+            display: inline-block;
+            color: @rr-red;
+            font-size: 6rem;
+            line-height: 4rem;
+            cursor: pointer;
+          }
+        }
+      }
+
+			a.rr-logo {
+				display: block;
+				height: 7rem;
+				margin: 0 auto;
+				position: relative;
+				width: 178px;
+        box-sizing: border-box;
+				> svg,.svg {
+					bottom: 0;
+					display: block;
+					height: auto;
+					left: auto;
+					margin: auto;
+					max-height: 7rem;
+					max-width: 13.75rem;
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: 100%;
+          box-sizing: border-box;
+				}
+			}
+			a.business-login {
+				background-color: @rr-blue;
+				background-image: -webkit-gradient(
+					linear,
+					left top,
+					left bottom,
+					color-stop(0, @rr-blue-ninety),
+					color-stop(1, @rr-blue)
+				);
+				background-image: -o-linear-gradient(bottom, @rr-blue-ninety 0%, @rr-blue 100%);
+				background-image: -moz-linear-gradient(bottom, @rr-blue-ninety 0%, @rr-blue 100%);
+				background-image: -webkit-linear-gradient(bottom, @rr-blue-ninety 0%, @rr-blue 100%);
+				background-image: -ms-linear-gradient(bottom, @rr-blue-ninety 0%, @rr-blue 100%);
+				background-image: linear-gradient(to bottom, @rr-blue-ninety 0%, @rr-blue 100%);
+				border-radius: 0.5rem;
+				border-color: #2d397d;
+				border-width: 2px 2px 6px 2px;
+				border-style: solid;
+				color: @rr-white;
+				float: left;
+				font-family: @font-family-heading;
+				font-size: 2rem;
+				font-weight: 400;
+				height: 6rem;
+				line-height: 1.75rem;
+				margin-left: 5%;
+				max-width: 13rem;
+				padding-top: 1rem;
+				position: relative;
+				text-align: center;
+				text-decoration: none;
+				text-shadow: 0 -1px #2d397d;
+				top: 0.25rem;
+				width: 45%;
+				box-sizing: border-box;
+			}
+		}
+		&#mob-footer-social {
+			background-color: @rr-grey;
+			height: 2.5rem;
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%;
+      box-sizing: border-box;
+			.social {
+				position: relative;
+				top: -2.5rem;
+				width: 100%;
+				max-width: 35rem;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				font-size: 0;
+        box-sizing: border-box;
+				a {
+				  display: inline-block;
+        //   width: ~"calc(100% / 7)";
+          box-sizing: border-box;
+
+          svg,.svg {
+            display: block;
+            max-height: 5rem;
+            max-width: 5rem;
+            min-height: 2.75rem;
+            min-width: 2.75rem;
+            box-sizing: border-box;
+            &.youtube {
+              background-color: #bb0000;
+            }
+            &.facebook {
+              background-color: #3b5998;
+            }
+            &.pinterest {
+              background-color: #cb2027;
+            }
+            &.twitter {
+              background-color: #55acee;
+            }
+            &.google {
+              background-color: #dd4b39;
+            }
+            &.linkedin {
+              background-color: #007bb5;
+            }
+            &.instagram {
+              background-color: #125688;
+            }
+          }
+				}
+			}
+		}
+		&#mob-footer-links {
+			background-color: @rr-grey;
+			overflow: hidden;
+			padding-left: 0;
+			padding-right: 0;
+			padding-top: 1.5rem;
+			width: 100%;
+      box-sizing: border-box;
+			.links {
+				display: block;
+				font-family: @font-family-base;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 36rem;
+				width: 100%;
+				padding-left: 0.5rem;
+				font-size: 1.125rem;
+				line-height: 1.77778;
+				text-align: center;
+        box-sizing: border-box;
+				a {
+					color: @rr-heather;
+					display: block;
+					float: left;
+					text-decoration: underline;
+					width: 33.333%;
+          box-sizing: border-box;
+					&.space-right {
+					  margin-right: 30%;
+					}
+				}
+			}
+		}
+		&#mob-footer-copyright {
+			background-color: @rr-grey;
+			height: 10rem;
+			padding: 1.75rem 1.5rem 0;
+			width: 100%;
+			box-sizing: border-box;
+			p {
+				width: 100%;
+				max-width: 35rem;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				color: @rr-heather;
+				font-size: 1.125rem;
+				line-height: 1.33333;
+				text-align: center;
+				margin-bottom: 0;
+				font-family: @font-family-base;
+        box-sizing: border-box;
+			}
+		}
+	}
+}
