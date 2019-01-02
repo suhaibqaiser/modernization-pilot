@@ -1,0 +1,41 @@
+version: '3.7' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  redis:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
+  rr-content-layer: # name of the first service
+    links:
+      - redis
+    environment:
+      - REDIS_URL=redis://cache
+    image: rr-content-layer
+    build:
+      context: rr-content-layer
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8080
+    volumes:
+      - /data/rr-content-layer
+  rr-web-server: #name of the second service
+    links:
+      - redis
+    environment:
+      - REDIS_URL=redis://cache
+    build: rr-web-server # specify the directory of the Dockerfile
+    ports:
+      - "3000:3000" #specify ports forewarding
+  rr-web-client: # name of the third service
+    build: 
+      context: rr-web-client # specify the directory of the Dockerfile
+      args:
+        NG_ENV: local
+    restart: always
+    ports:
+      - 4000:4200
+
+  
+  
