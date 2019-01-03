@@ -17,15 +17,15 @@
     </div>
     <div class="row">
        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-          <div class="blog-detail" *ngIf=(blogPost)>
+          <div class="blog-detail" *ngIf=(blogpostdata)>
              <div class="hero-image hidden-print"></div>
              
-             <h1 class="title rr-main-title rr-heading-3">{{  blogPost.contentlets[0].title }}</h1>
+             <h1 class="title rr-main-title rr-heading-3">title {{  blogpostdata.contentlets[0].title }}</h1>
              
-             <div class="published-date rr-margin-bottom">{{  blogPost.contentlets[0].modDate }}</div>
+             <div class="published-date rr-margin-bottom">{{  blogpostdata.contentlets[0].modDate }}</div>
 
              <!-- BODY CONTENT -->
-             <div class="blog-body-content" [innerHTML]=" blogPost.contentlets[0].body ">
+             <div class="blog-body-content" [innerHTML]=" blogpostdata.contentlets[0].body ">
               
 
               </div>
