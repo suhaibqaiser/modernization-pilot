@@ -10,3 +10,9 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(BrowserAppModule)
   .catch(err => console.error(err));
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    platformBrowserDynamic().bootstrapModule(BrowserAppModule)
+      .catch(err => console.log(err));
+  })
