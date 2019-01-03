@@ -17,7 +17,7 @@ export class ApiService {
     private http:HttpClient
   ) { }
 
-  private postUrl = 'http://localhost:7000/blogs';
+  private postUrl = 'http://localhost:8000/blogs';
   // private postUrl = 'http://system4dev.rotorooter.com:8080/api/content/id/d53463d3-07af-4298-b6c2-cc2adc2258e4';
 
   // getPost(): Observable<BlogPost>{
