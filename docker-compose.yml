@@ -1,5 +1,12 @@
 version: '3.7' # specify docker-compose version
 
+networks:
+  db_net:
+
+volumes:
+  cms-shared:
+  cms-local:
+  dbdata:
 # Define the services/containers to be run
 services:
   redis:
@@ -36,6 +43,30 @@ services:
     restart: always
     ports:
       - 4000:4200
+  dotcms:
+    image: dotcms/dotcms:latest
+    ports:
+      - "7000:8080"
+    environment:
+      "CMS_HEAP_SIZE": '1g'
+      "CMS_JAVA_OPTS": '-XX:+PrintFlagsFinal'
+      "PROVIDER_DB_DNSNAME": 'db'
+    depends_on:
+      - db
+    volumes:
+      - cms-shared:/data/shared
+      - cms-local:/data/local
+      #- [serverpath]/license.dat:/data/local/dotsecure/license/license.dat
+      #- [serverpath]/license.zip:/data/shared/assets/license.zip
+    networks:
+      - db_net
+
+  db:
+    image: dotcms/postgres:latest
+    volumes:
+      - dbdata:/data/pg
+    networks:
+      - db_net
 
   
   
