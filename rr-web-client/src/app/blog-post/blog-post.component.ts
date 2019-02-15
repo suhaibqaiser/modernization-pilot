@@ -27,7 +27,7 @@ export class BlogPostComponent implements OnInit {
 
     if(!this.blogpostdata.hasOwnProperty('contentlets')){
       
-      this.http.get('http://localhost:7000/blogs')
+      this.http.get('http://system4dev.rotorooter.com:8080/api/content/id/d53463d3-07af-4298-b6c2-cc2adc2258e4')
       .subscribe((data) => {
         this.blogpostdata = data;
         this.state.set(STATE_KEY_BLOGPOST, <any>this.blogpostdata)
