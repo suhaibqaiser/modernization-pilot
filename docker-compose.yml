@@ -1,4 +1,4 @@
-version: '3.7' # specify docker-compose version
+version: '3' # specify docker-compose version
 
 networks:
   db_net:
@@ -24,7 +24,7 @@ services:
       context: rr-content-layer
       dockerfile: Dockerfile
     ports:
-      - 8000:8080
+      - 8001:8080
     volumes:
       - /data/rr-content-layer
   rr-web-server: #name of the second service
